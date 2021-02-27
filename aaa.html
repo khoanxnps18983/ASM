@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	var anhAr=[];
+	var currentIndex=0;
+	
+	function loadAnh(){
+		for(var i=0;i<6;i++){
+			anhAr[i] = new Image();
+			anhAr[i].src= "img"+i+".jpg";
+		}
+	}
+	function next(){
+		if(currentIndex<7){
+			currentIndex ++;
+			document.getElementById("hoa").src=anhAr[currentIndex].src;
+		}
+	}
+	function back(){
+		if(currentIndex>0){
+			currentIndex --;
+			document.getElementById("hoa").src=anhAr[currentIndex].src;
+		}
+	}
+</script>
+
+<title>Rollover</title>
+</head>
+
+<body onload="loadAnh();">
+<img id="hoa" src="img/A0.JPG" /> <br/>
+<input type="submit" value="back" onclick="back();"/>
+<input type="submit" value="next" onclick="next();"/>
+</body>
+</html>
